@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../api/business.dart';
+import 'danzipeifei.dart';
+import 'fuhepeifei.dart';
 
 class ZidongyunxingPage extends GetView<ZidongyunxingController> {
   @override
@@ -15,8 +17,32 @@ class ZidongyunxingPage extends GetView<ZidongyunxingController> {
                           : Colors.grey,
                   onPressed:
                       controller.datas.any((element) => element['isrun'] == '是')
-                          ? () {
-                              print("sss");
+                          ? () async {
+                              int result = await showDialog(
+                                context: context,
+                                builder: (_) => SimpleDialog(
+                                  title: Text("配肥方式"),
+                                  children: [
+                                    SimpleDialogOption(
+                                      onPressed: () {
+                                        Navigator.pop(context, 1);
+                                      },
+                                      child: const Text('复合肥配肥'),
+                                    ),
+                                    SimpleDialogOption(
+                                      onPressed: () {
+                                        Navigator.pop(context, 2);
+                                      },
+                                      child: const Text('单质肥配肥'),
+                                    ),
+                                  ],
+                                ),
+                              );
+                              if (result == 1) {
+                                Get.to(() => FuhepeihePage());
+                              } else if (result == 2) {
+                                Get.to(() => DanzipeifeiPage());
+                              }
                             }
                           : null,
                   child: Text("配肥",

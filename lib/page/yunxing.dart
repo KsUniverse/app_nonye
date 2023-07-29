@@ -1,3 +1,4 @@
+import 'package:app_nongye/page/yunxing/yunxingtupian.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -35,7 +36,7 @@ class YunxingTabbarController extends GetxController
   ];
   final List<Widget> tabbars = [
     ZidongyunxingPage(),
-    ZidongyunxingPage(),
+    YunxingTupianPage(),
     ZidongyunxingPage(),
     ZidongyunxingPage(),
     ZidongyunxingPage(),
@@ -46,7 +47,7 @@ class YunxingTabbarController extends GetxController
   @override
   void onInit() {
     Get.put(ZidongyunxingController());
-    Get.put(ZidongyunxingController());
+    Get.put(YunxingTupianController());
     Get.put(ZidongyunxingController());
     Get.put(ZidongyunxingController());
     Get.put(ZidongyunxingController());
@@ -60,7 +61,7 @@ class YunxingTabbarController extends GetxController
         Get.find<ZidongyunxingController>().onInit();
         break;
       case 1:
-        Get.find<ZidongyunxingController>().onInit();
+        Get.find<YunxingTupianController>().onInit();
         break;
       case 2:
         Get.find<ZidongyunxingController>().onInit();

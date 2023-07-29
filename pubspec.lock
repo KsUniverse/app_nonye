@@ -158,6 +158,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.0.2"
+  idkit:
+    dependency: "direct main"
+    description:
+      name: idkit
+      sha256: ebd9e935776b6d1106138caa66a07b6a84717c8206cb3840d159f8a5c4d82603
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.3.9"
   intl:
     dependency: "direct main"
     description:
